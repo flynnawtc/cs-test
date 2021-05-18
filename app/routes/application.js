@@ -58,6 +58,10 @@ export default class ApplicationRoute extends Route {
       "After first set - should be 'leaf 1'",
       cs.get('branch.leaf').get('description')
     );
+    console.log(
+      "After first set - should be 'leaf 1'",
+      cs.branch.leaf.description
+    );
     let l1 = cs.get('branch.leaf');
     console.log('l1', l1);
     console.log("After first set - should be 'leaf 1'", l1.get('description'));
@@ -83,10 +87,14 @@ export default class ApplicationRoute extends Route {
       "After second set - should be 'leaf 2'",
       cs.get('branch.leaf').get('description')
     );
+    console.log(
+      "After second set - should be 'leaf 2'",
+      cs.branch.leaf.description
+    );
     let l2 = cs.get('branch.leaf');
     console.log('l2', l2);
-    console.log("After first set - should be 'leaf 2'", l2.get('description'));
-    console.log("After first set - should be 'leaf 2'", l2.description);
+    console.log("After second set - should be 'leaf 2'", l2.get('description'));
+    console.log("After second set - should be 'leaf 2'", l2.description);
     console.log('After second set changes', cs._changes);
 
   }
