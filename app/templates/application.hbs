@@ -1,7 +1,28 @@
 {{page-title "CsTest"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<div id="test1">
+  <p>
+    Using changeset-get
+    <Testselect
+      @options={{this.leaves}}
+      @changeset={{changeset this.trunk}}
+      @propertyName="branch.leaf"
+      @displayField="description"
+    />
+  </p>
+</div>
+
+
+<div id="test1">
+  <p>
+    Using Ember get
+    <Testselect2
+      @options={{this.leaves}}
+      @changeset={{changeset this.trunk}}
+      @propertyName="branch.leaf"
+      @displayField="description"
+    />
+  </p>
+</div>
 
 {{outlet}}

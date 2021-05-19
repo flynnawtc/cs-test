@@ -9,6 +9,9 @@ export default class ApplicationRoute extends Route {
   @service('store')
   store;
 
+  leaves = null;
+  trunk = null;
+
   constructor(owner, args) {
     super(owner, args);
 
@@ -33,6 +36,9 @@ export default class ApplicationRoute extends Route {
     //   id: 2,
     //   description: 'leaf 2',
     // };
+
+    this.trunk = trunk;
+    this.leaves = [leaf1, leaf2];
 
     console.log('trunk before changeset created', trunk);
     console.log('leaf1 before changeset created', leaf1);
@@ -97,5 +103,10 @@ export default class ApplicationRoute extends Route {
     console.log("After second set - should be 'leaf 2'", l2.description);
     console.log('After second set changes', cs._changes);
 
+  }
+
+  setupController(controller /*, model */) {
+    controller.trunk = this.trunk;
+    controller.leaves = this.leaves;
   }
 }
