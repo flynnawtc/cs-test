@@ -1,0 +1,10 @@
+    <PowerSelect
+      @options={{@options}}
+      {{!-- @selected={{changeset-get @changeset @propertyName}} --}}
+      @selected={{this.selectedItem}}
+      {{!-- THIS ALSO WORKS: @selected={{get @changeset @propertyName}} --}}
+      @onChange={{this.onChange}}
+       as |option|
+    >
+      {{get option @displayField}}
+    </PowerSelect>
