@@ -1,0 +1,8 @@
+    <PowerSelect
+      @options={{@options}}
+      @selected={{changeset-get @changeset @propertyName}}
+      @onChange={{this.onChange}}
+       as |option|
+    >
+      {{get option @displayField}}
+    </PowerSelect>
